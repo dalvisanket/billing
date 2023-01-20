@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+
+    //implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:$spring_cloud_version"
+
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+bootJar{
+    enabled = true
+}
+
+springBoot{
+    mainClass = "com.ebms.bllng.BillingApplication"
+}
+
